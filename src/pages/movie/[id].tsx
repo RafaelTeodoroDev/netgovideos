@@ -3,7 +3,8 @@ import { GetServerSideProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { api } from "../services/api";
+import { api } from "../../services/api";
+import { Header } from "../components/Header";
 
 export default function Home() {
   const [movie, setMovie] = useState<any>({})
@@ -21,6 +22,8 @@ export default function Home() {
   console.log(movie)
 
   return (
+    <>
+    <Header />
     <Container maxW={'7xl'}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
@@ -136,6 +139,8 @@ export default function Home() {
         </Stack>
       </SimpleGrid>
     </Container>
+    </>
+    
   )
 }
 

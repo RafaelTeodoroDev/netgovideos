@@ -4,11 +4,13 @@ import { useSidebarDrawer } from "../../../context/SidebarDrawerContext";
 import { RiMenuLine } from 'react-icons/ri'
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAuth } from "../../../context/AuthContext";
 
 
 export function Header(){
   const { onOpen } = useSidebarDrawer()
-  const router = useRouter()
+  const { user } = useAuth()
+  console.log(user)
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -36,10 +38,10 @@ export function Header(){
 
       <Box display='flex' alignItems='center' ml='auto' >
         <Flex flexDirection='column' mr='4'>
-          {isWideVersion ? <Text textAlign='right'>Rafael Teodoro</Text> : ''}
-          {isWideVersion ? <Text textAlign='right'>rafaelteodoro2003@gmail.com</Text> : ''}
+          {isWideVersion ? <Text textAlign='right'>{user?.Iu?.sf}</Text> : ''}
+          {isWideVersion ? <Text textAlign='right'>{user?.Iu?.yv}</Text> : ''}
         </Flex>
-        <Avatar src="https://github.com/RafaelTeodoroDev.png"/>
+        <Avatar src={user?.Iu?.zN}/>
       </Box>
     </Flex>
   )

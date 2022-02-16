@@ -4,7 +4,7 @@ import Link from "next/link"
 export function MovieBox({movie}){
 
   return(
-    <Link href={`/${movie.id}`}>  
+    <Link href={`/movie/${movie.id}`}>  
       <Box as='button' w='45' p='2' display='flex' flexDirection='column' alignItems='center' justifyContent='center' bg='#202024' borderRadius='15' boxShadow='lg'>
         <img src={movie.image.medium} style={{borderRadius: 8}} alt=""/>
 
